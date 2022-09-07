@@ -57,7 +57,7 @@ export default function Keyboard() {
   };
 
   return (
-    <>
+    <View style={Styles.viewBottom}>
       <View style={Styles.row}>
         <Button title='C' isGray onPress={clear} />
         <Button
@@ -95,6 +95,6 @@ export default function Keyboard() {
         />
         <Button title='=' isBlue onPress={() => getResult()} />
       </View>
-    </>
+    </View>
   );
 }
