@@ -6,7 +6,7 @@ import { ThemeContext } from './context/ThemeContext';
 import Keyboard from './components/KeyBoard';
 
 export default function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   return (
     <ThemeContext.Provider value={theme}>
       <SafeAreaView

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { myColors } from './Colors';
 
 export const Styles = StyleSheet.create({
@@ -54,7 +54,7 @@ export const Styles = StyleSheet.create({
   },
   viewBottom: {
     position: 'absolute',
-    bottom: 50,
+    bottom: Platform.OS === 'ios' ? 45 : 30,
   },
   screenFirstNumber: {
     fontSize: 96,
