@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { View, Vibration } from 'react-native';
+import { View, Text, Vibration } from 'react-native';
+import { myColors } from '../styles/Colors';
 import { Styles } from '../styles/GlobalStyles';
 import Button from './Button';
 
@@ -52,6 +53,45 @@ export default function Keyboard() {
         clear();
         setResult(0);
         break;
+    }
+  };
+
+  const firstNumberDisplay = () => {
+    if (result !== null) {
+      return (
+        <Text
+          style={
+            result < 99999
+              ? [Styles.screenFirstNumber, { color: myColors.result }]
+              : [
+                  Styles.screenFirstNumber,
+                  { fontSize: 50, color: myColors.result },
+                ]
+          }
+        >
+          {result?.toString()}
+        </Text>
+      );
+    }
+    if (firstNumber && firstNumber.length < 6) {
+      return <Text style={Styles.screenFirstNumber}>{firstNumber}</Text>;
+    }
+    if (firstNumber === '') {
+      return <Text style={Styles.screenFirstNumber}>{'0'}</Text>;
+    }
+    if (firstNumber.length > 5 && firstNumber.length < 8) {
+      return (
+        <Text style={[Styles.screenFirstNumber, { fontSize: 70 }]}>
+          {firstNumber}
+        </Text>
+      );
+    }
+    if (firstNumber.length > 7) {
+      return (
+        <Text style={[Styles.screenFirstNumber, { fontSize: 50 }]}>
+          {firstNumber}
+        </Text>
+      );
     }
   };
 
