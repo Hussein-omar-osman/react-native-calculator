@@ -18,6 +18,7 @@ export default function Keyboard() {
   };
 
   const handleOperationPress = (buttonValue: string) => {
+    if (!firstNumber) return;
     Vibration.vibrate(130);
     setOperation(buttonValue);
     setSecondNumber(firstNumber);
@@ -97,6 +98,22 @@ export default function Keyboard() {
 
   return (
     <View style={Styles.viewBottom}>
+      <View
+        style={{
+          height: 120,
+          width: '90%',
+          justifyContent: 'flex-end',
+          alignSelf: 'center',
+        }}
+      >
+        <Text style={Styles.screenSecondNumber}>
+          {secondNumber}
+          <Text style={{ color: 'purple', fontSize: 50, fontWeight: '500' }}>
+            {operation}
+          </Text>
+        </Text>
+        {firstNumberDisplay()}
+      </View>
       <View style={Styles.row}>
         <Button title='C' isGray onPress={clear} />
         <Button
