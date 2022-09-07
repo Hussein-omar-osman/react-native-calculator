@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Switch, SafeAreaView } from 'react-native';
+import { StyleSheet, Switch, SafeAreaView, Platform } from 'react-native';
 import { myColors } from './styles/Colors';
 import { ThemeContext } from './context/ThemeContext';
-import Button from './components/Button';
 import Keyboard from './components/KeyBoard';
 
 export default function App() {
@@ -20,7 +19,7 @@ export default function App() {
         <Switch
           value={theme === 'light'}
           onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          style={{ marginTop: 20 }}
+          style={Platform.OS === 'android' && { marginTop: 25 }}
         />
 
         <Keyboard />

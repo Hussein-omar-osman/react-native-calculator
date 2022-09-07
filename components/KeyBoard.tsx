@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { View, Text, Vibration } from 'react-native';
+import { View, Vibration } from 'react-native';
 import { Styles } from '../styles/GlobalStyles';
-import { myColors } from '../styles/Colors';
 import Button from './Button';
 
 export default function Keyboard() {
