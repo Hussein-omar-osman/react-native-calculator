@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Vibration } from 'react-native';
 import { Styles } from '../styles/GlobalStyles';
 import { myColors } from '../styles/Colors';
 import Button from './Button';
@@ -12,11 +12,13 @@ export default function Keyboard() {
 
   const handleNumberPress = (buttonValue: string) => {
     if (firstNumber.length < 10) {
+      Vibration.vibrate(50);
       setFirstNumber(firstNumber + buttonValue);
     }
   };
 
   const handleOperationPress = (buttonValue: string) => {
+    Vibration.vibrate(130);
     setOperation(buttonValue);
     setSecondNumber(firstNumber);
     setFirstNumber('');
