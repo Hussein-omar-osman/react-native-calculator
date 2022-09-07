@@ -72,6 +72,27 @@ export default function Keyboard() {
         <Button title='9' onPress={() => handleNumberPress('9')} />
         <Button title='×' isBlue onPress={() => handleOperationPress('*')} />
       </View>
+      <View style={Styles.row}>
+        <Button title='4' onPress={() => handleNumberPress('4')} />
+        <Button title='5' onPress={() => handleNumberPress('5')} />
+        <Button title='6' onPress={() => handleNumberPress('6')} />
+        <Button title='-' isBlue onPress={() => handleOperationPress('-')} />
+      </View>
+      <View style={Styles.row}>
+        <Button title='1' onPress={() => handleNumberPress('1')} />
+        <Button title='2' onPress={() => handleNumberPress('2')} />
+        <Button title='3' onPress={() => handleNumberPress('3')} />
+        <Button title='+' isBlue onPress={() => handleOperationPress('+')} />
+      </View>
+      <View style={Styles.row}>
+        <Button title='.' onPress={() => handleNumberPress('.')} />
+        <Button title='0' onPress={() => handleNumberPress('0')} />
+        <Button
+          title='⌫'
+          onPress={() => setFirstNumber(firstNumber.slice(0, -1))}
+        />
+        <Button title='=' isBlue onPress={() => getResult()} />
+      </View>
     </>
   );
 }
