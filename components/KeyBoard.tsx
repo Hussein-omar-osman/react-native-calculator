@@ -21,5 +21,12 @@ export default function MyKeyboard() {
     setFirstNumber('');
   };
 
+  const clear = () => {
+    setFirstNumber('');
+    setSecondNumber('');
+    setOperation('');
+    setResult(null);
+  };
+
   return <View></View>;
 }
