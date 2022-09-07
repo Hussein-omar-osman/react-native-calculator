@@ -2,8 +2,9 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { Styles } from '../styles/GlobalStyles';
 import { myColors } from '../styles/Colors';
+import Button from './Button';
 
-export default function MyKeyboard() {
+export default function Keyboard() {
   const [firstNumber, setFirstNumber] = React.useState('');
   const [secondNumber, setSecondNumber] = React.useState('');
   const [operation, setOperation] = React.useState('');
@@ -53,5 +54,24 @@ export default function MyKeyboard() {
     }
   };
 
-  return <View></View>;
+  return (
+    <>
+      <View style={Styles.row}>
+        <Button title='C' isGray onPress={clear} />
+        <Button
+          title='+/-'
+          isGray
+          onPress={() => handleOperationPress('+/-')}
+        />
+        <Button title='％' isGray onPress={() => handleOperationPress('％')} />
+        <Button title='÷' isBlue onPress={() => handleOperationPress('/')} />
+      </View>
+      <View style={Styles.row}>
+        <Button title='7' onPress={() => handleNumberPress('7')} />
+        <Button title='8' onPress={() => handleNumberPress('8')} />
+        <Button title='9' onPress={() => handleNumberPress('9')} />
+        <Button title='×' isBlue onPress={() => handleOperationPress('*')} />
+      </View>
+    </>
+  );
 }
