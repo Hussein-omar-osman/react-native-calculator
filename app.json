@@ -2,6 +2,7 @@
   "expo": {
     "name": "Calculator App",
     "slug": "calculator-app",
+    "description": "This is a simple calculator app built with react native & expo cli",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
